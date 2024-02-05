@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-20">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFxUserLib"/>
+	<classpathentry kind="lib" path="C:/Java/JFoenixAndOthers/jfoenix-17-0.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Java/FontAwesomeFx/fontawesomefx-commons-9.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Java/FontAwesomeFx/fontawesomefx-fontawesome-4.7.0-9.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Java/AnimateFx/AnimateFX-1.2.4.jar"/>
+	<classpathentry kind="lib" path="C:/Java/mongo-java-driver-jar_files/mongo-java-driver-3.12.14.jar"/>
+	<classpathentry kind="lib" path="C:/Java/JNA/jna-5.13.0.jar"/>
+	<classpathentry kind="lib" path="C:/Java/JNA/jna-platform-win32.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

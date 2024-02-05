@@ -1,0 +1,134 @@
+.root-anch{
+	-fx-background-image: url('background-2.jpg');
+	-fx-background-color: black;
+	-fx-background-size: cover;
+}
+.display-pane{
+	 -fx-background-color: linear-gradient(to bottom left, #00284d, rgba(0, 40, 77, 0.9), rgba(0, 40, 77, 0.6));
+}
+.search{
+	-fx-prompt-text-fill: #fff59b;
+	-fx-text-fill: #ffffff;
+}
+.player{
+	 -fx-background-color: linear-gradient(to bottom right, transparent, #b3f0ff, #99ebff);
+	 -fx-background-radius: 20px 20px 0 0;
+	 -fx-border-color: #99ebff;
+	 -fx-border-radius: 20px 20px 0 0;
+	 -fx-border-width: 1px 0 0 1px;
+}
+.song-details{
+	-fx-background-color:  rgba(77, 77, 77, 0.4);
+	-fx-background-radius: 20px 0 0 0;
+}
+.scroll-pane{
+	-fx-background-color: transparent;
+}
+.scroll-pane .viewport {
+	-fx-background-color: transparent;
+}
+.scroll-pane .scroll-bar {
+	-fx-background-color: transparent;
+}
+.scroll-pane .scroll-bar .thumb{
+	-fx-background-color: #33d6ff;
+	-fx-background-insets: 5, 5, 5;
+	-fx-padding: 1px;
+}
+.scroll-pane .scroll-bar .thumb:hover,
+.scroll-pane .scroll-bar .thumb:pressed{
+	-fx-background-insets: 4, 4, 4;
+}
+.jfx-slider .thumb{
+	-fx-background-color: #001a33; /*#001a33 */
+	-fx-background-radius: 100%;
+	-fx-border-radius: 100%;
+	-fx-border-color: transparent;
+	-fx-border-width: 2px;
+	-fx-padding: 0.1em;
+}
+
+.jfx-slider:hover > .thumb{
+	-fx-border-color: #001a33;
+	-fx-border-width: 2px;
+	-fx-scale-x: 1.5;
+	-fx-scale-y: 1.5;
+}
+
+.jfx-slider .colored-track{
+	-fx-background-color: #001a33;
+}
+
+.jfx-slider .track{
+	-fx-background-color: #737373;
+	-fx-background-radius: 3;
+	-fx-padding: 3;
+}
+.nav-anch{
+	-fx-background-color: linear-gradient(to bottom, #001a33,  rgba(0, 26, 51, 0.5));
+}
+.nav-button-link{
+	-fx-background-color: none;
+	-fx-background-radius: none;
+	-fx-border-color: transparent;
+	-fx-border-width: 0 0 0 4px;
+	-fx-text-fill: #e4e2e2;
+}
+
+.nav-button-link:hover{
+	-fx-background-color: linear-gradient(to right, rgba(0, 204, 255,0.3), rgba(0, 204, 255, 0.2), transparent);
+	-fx-border-color: #00ccff;
+	-fx-text-fill: #00ccff;
+}
+.nav-button-link:hover > .nav-icon {
+	-fx-fill: #00ccff;
+}
+.top-music-pane-1{
+	-fx-background-image:   url('images/img-1.png');
+}
+.top-music-pane-2{
+	-fx-background-image:   url('images/img-2.png');
+}
+.top-music-pane-3{
+	-fx-background-image:   url('images/img-3.png');
+}
+.top-music-pane-4{
+	-fx-background-image:   url('images/img-4.png');
+}
+.top-music-pane-5{
+	-fx-background-image:   url('images/img-5.png');
+}
+.top-music-pane-6{
+	-fx-background-image:   url('images/img-6.png');
+}
+.top-music-pane-7{
+	-fx-background-image:   url('images/img-7.png');
+}
+.top-music-pane-8{
+	-fx-background-image:   url('images/img-8.png');
+}
+#top-music-pane{
+	-fx-background-size: 100% 100%;
+	-fx-border-color: #00ccff;
+	-fx-border-width: 1px;
+	-fx-border-radius: 25px;
+	-fx-effect:  dropshadow(three-pass-box,rgba(26, 255, 255,0.1), 10.0, 0.0, 0.0, 10.0);
+}
+.trending-music-content{
+	-fx-background-color:  rgba(0, 26, 26, 0.8);
+	-fx-background-radius: 8px;
+	-fx-min-height: 45;
+}
+.trending-play-button{
+	-fx-background-color:  #00141a;
+	-fx-background-radius: 100%;
+	-fx-border-color: #002933;
+	-fx-border-width: 2px;
+	-fx-border-radius: 100%;
+	-fx-pref-width: 36;
+	-fx-pref-height:38;
+}
+.trending-play-button:hover{
+	-fx-background-color:  transparent;
+	-fx-border-color: #00ccff;
+}

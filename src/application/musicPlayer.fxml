@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXSlider?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootAnch" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="1000.0" styleClass="root-anch" stylesheets="@musicPlayer.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MusicPlayerController">
+   <children>
+      <AnchorPane maxHeight="585.0" maxWidth="286.0" prefHeight="512.0" prefWidth="216.0" styleClass="nav-anch" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox layoutX="14.0" layoutY="27.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox prefHeight="54.0" prefWidth="254.0" spacing="5.0" style="-fx-border-width: 0 0 1px 0; -fx-border-color: #003d4d;">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <ImageView fitHeight="53.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@wave-sound.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="57.0" prefWidth="157.0" text="aud|b|e." textFill="#00ccff">
+                           <font>
+                              <Font name="Dubai Regular" size="31.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="25.0" top="15.0" />
+                     </padding>
+                  </HBox>
+                  <VBox VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="256.0" text="BROWSE" textFill="#fff985">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" top="10.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <VBox spacing="5.0">
+                           <children>
+                              <Button fx:id="homeButton" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#home" prefHeight="45.0" prefWidth="261.0" styleClass="nav-button-link" text="HOME" textFill="#e4e2e2">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="Dubai Medium" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fx:id="homeIcon" fill="#e4e2e2" glyphName="HOME" size="15" styleClass="nav-icon" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="playlistsButton" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#playlists" prefHeight="45.0" prefWidth="261.0" styleClass="nav-button-link" text="PLAYLISTS" textFill="#e4e2e2">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="Dubai Medium" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fx:id="playlistsIcon" fill="#e4e2e2" glyphName="LIST_UL" size="15" styleClass="nav-icon" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="artistsButton" alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#artists" prefHeight="45.0" prefWidth="261.0" styleClass="nav-button-link" text="ARTISTS" textFill="#e4e2e2">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="Dubai Medium" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fx:id="artistsIcon" fill="#e4e2e2" glyphName="USER" size="15" styleClass="nav-icon" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="albumsButton" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#albums" prefHeight="45.0" prefWidth="261.0" styleClass="nav-button-link" text="ALBUMS" textFill="#e4e2e2">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="Dubai Medium" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fx:id="albumsIcon" fill="#e4e2e2" size="15" styleClass="nav-icon" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="256.0" text="DISCOVER" textFill="#fff985">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" top="10.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <VBox spacing="5.0">
+                           <children>
+                              <Button fx:id="favouritesButton" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#favourites" prefHeight="45.0" prefWidth="261.0" styleClass="nav-button-link" text="FAVOURITES" textFill="#e4e2e2">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="Dubai Medium" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fx:id="favouritesIcon" fill="#e4e2e2" size="15" styleClass="nav-icon" text="" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="albumsPane" layoutX="236.0" layoutY="20.0" maxHeight="580.0" maxWidth="784.0" prefHeight="503.0" prefWidth="784.0" styleClass="display-pane" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutY="222.0" prefHeight="17.0" prefWidth="784.0" text="Albums" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="47.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="playlistsPane" layoutX="226.0" layoutY="10.0" maxHeight="580.0" maxWidth="784.0" prefHeight="503.0" prefWidth="784.0" styleClass="display-pane" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutY="222.0" prefHeight="17.0" prefWidth="784.0" text="Playlists" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="47.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="favouritesPane" layoutX="226.0" layoutY="10.0" maxHeight="580.0" maxWidth="784.0" prefHeight="503.0" prefWidth="784.0" styleClass="display-pane" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutY="222.0" prefHeight="17.0" prefWidth="784.0" text="Favourites" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="47.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="artistsPane" layoutX="246.0" layoutY="30.0" maxHeight="580.0" maxWidth="784.0" prefHeight="503.0" prefWidth="784.0" styleClass="display-pane" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutY="222.0" prefHeight="17.0" prefWidth="784.0" text="Artists" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="47.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="homePane" layoutX="216.0" layoutY="10.0" maxHeight="580.0" maxWidth="784.0" prefHeight="503.0" prefWidth="784.0" styleClass="display-pane" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox layoutX="-32.0" prefHeight="490.0" prefWidth="746.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox prefHeight="54.0" prefWidth="254.0" spacing="5.0" style="-fx-border-width: 0 0 1px 0; -fx-border-color: #003d4d;">
+                     <children>
+                        <Button mnemonicParsing="false" style="-fx-background-color: none;">
+                           <graphic>
+                              <FontAwesomeIconView fill="#fff59b" glyphName="SEARCH" size="20" />
+                           </graphic>
+                        </Button>
+                        <TextField fx:id="searchBar" prefHeight="34.0" prefWidth="309.0" promptText="Search for songs...." style="-fx-background-color: none;" styleClass="search">
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label opacity="0.0" prefHeight="56.0" prefWidth="0.0" text="aud|b|e." textFill="#00ccff">
+                           <font>
+                              <Font name="Dubai Regular" size="31.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="35.0" top="15.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="welcomeUser" prefHeight="22.0" prefWidth="746.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="785.0" text="Welcome Firstname" textFill="WHITE" HBox.hgrow="NEVER">
+                           <font>
+                              <Font name="Corbel Bold" size="29.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="35.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <Label fx:id="topArtistsLabel" prefHeight="17.0" prefWidth="800.0" text="TOP ARTISTS" textFill="WHITE" VBox.vgrow="NEVER">
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="239.0" prefWidth="784.0" VBox.vgrow="NEVER">
+                     <content>
+                        <AnchorPane fx:id="topArtists" prefHeight="171.0" prefWidth="712.0">
+                           <children>
+                              <HBox prefHeight="161.0" prefWidth="744.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <VBox id="top-music-box" layoutX="185.0" layoutY="20.0" minHeight="94.0" minWidth="165.0" prefHeight="174.0" prefWidth="207.0" spacing="5.0">
+                                       <children>
+                                          <Pane id="top-music-pane" prefHeight="155.0" prefWidth="150.0" styleClass="top-music-pane-1" />
+                                          <Label prefHeight="17.0" prefWidth="150.0" text="Label" textFill="WHITE">
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox id="top-music-box" layoutX="20.0" layoutY="20.0" minHeight="94.0" minWidth="165.0" prefHeight="106.0" prefWidth="150.0" spacing="5.0">
+                                       <children>
+                                          <Pane id="top-music-pane" prefHeight="155.0" prefWidth="150.0" styleClass="top-music-pane-2" />
+                                          <Label prefHeight="17.0" prefWidth="150.0" text="Label" textFill="WHITE">
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox id="top-music-box" layoutX="185.0" layoutY="20.0" minHeight="94.0" minWidth="165.0" prefHeight="106.0" prefWidth="150.0" spacing="5.0">
+                                       <children>
+                                          <Pane id="top-music-pane" prefHeight="158.0" prefWidth="150.0" styleClass="top-music-pane-3" />
+                                          <Label prefHeight="17.0" prefWidth="150.0" text="Label" textFill="WHITE">
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox id="top-music-box" layoutX="350.0" layoutY="20.0" minHeight="94.0" minWidth="165.0" prefHeight="106.0" prefWidth="150.0" spacing="5.0">
+                                       <children>
+                                          <Pane id="top-music-pane" prefHeight="158.0" prefWidth="150.0" styleClass="top-music-pane-4" />
+                                          <Label prefHeight="17.0" prefWidth="150.0" text="Label" textFill="WHITE">
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox id="top-music-box" layoutX="515.0" layoutY="20.0" minHeight="94.0" minWidth="165.0" prefHeight="106.0" prefWidth="150.0" spacing="5.0">
+                                       <children>
+                                          <Pane id="top-music-pane" prefHeight="158.0" prefWidth="150.0" styleClass="top-music-pane-5" />
+                                          <Label prefHeight="17.0" prefWidth="150.0" text="Label" textFill="WHITE">
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox id="top-music-box" layoutX="680.0" layoutY="20.0" minHeight="94.0" minWidth="165.0" prefHeight="106.0" prefWidth="150.0" spacing="5.0">
+                                       <children>
+                                          <Pane id="top-music-pane" prefHeight="158.0" prefWidth="150.0" styleClass="top-music-pane-6" />
+                                          <Label prefHeight="17.0" prefWidth="150.0" text="Label" textFill="WHITE">
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox id="top-music-box" layoutX="845.0" layoutY="20.0" minHeight="94.0" minWidth="165.0" prefHeight="106.0" prefWidth="150.0" spacing="5.0">
+                                       <children>
+                                          <Pane id="top-music-pane" prefHeight="158.0" prefWidth="150.0" styleClass="top-music-pane-7" />
+                                          <Label prefHeight="17.0" prefWidth="150.0" text="Label" textFill="WHITE">
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox id="top-music-box" layoutX="1010.0" layoutY="20.0" minHeight="94.0" minWidth="165.0" prefHeight="106.0" prefWidth="150.0" spacing="5.0">
+                                       <children>
+                                          <Pane id="top-music-pane" prefHeight="158.0" prefWidth="150.0" styleClass="top-music-pane-8" />
+                                          <Label prefHeight="17.0" prefWidth="150.0" text="Label" textFill="WHITE">
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+                  <Label fx:id="trendingLabel" prefHeight="17.0" prefWidth="810.0" text="TRENDING" textFill="WHITE" VBox.vgrow="NEVER">
+                     <padding>
+                        <Insets bottom="5.0" left="35.0" top="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane fitToWidth="true" style="" VBox.vgrow="ALWAYS">
+                     <content>
+                        <AnchorPane fx:id="trendingMusic" prefHeight="90.0" prefWidth="769.0">
+                           <children>
+                              <HBox prefHeight="200.0" prefWidth="744.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <VBox prefHeight="180.0" prefWidth="769.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="744.0" styleClass="trending-music-content">
+                                             <children>
+                                                <ImageView fx:id="musicImage01" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                                   <HBox.margin>
+                                                      <Insets right="20.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label fx:id="artistName01" prefHeight="21.0" prefWidth="212.0" text="Artist Name" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="songName01" maxWidth="800.0" minWidth="310.0" prefHeight="21.0" prefWidth="310.0" text="Song Name" textFill="#fff59b" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="songDuration01" maxWidth="200.0" minWidth="129.0" prefHeight="19.0" prefWidth="129.0" text="00:00" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="trendingButton1" mnemonicParsing="false" onAction="#playTrending" styleClass="trending-play-button" HBox.hgrow="ALWAYS">
+                                                   <graphic>
+                                                      <ImageView fx:id="trendingPlayImg1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@play-64.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                             <padding>
+                                                <Insets left="15.0" right="15.0" />
+                                             </padding></HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="15.0" minHeight="39.0" prefHeight="39.0" prefWidth="744.0" styleClass="trending-music-content">
+                                             <children>
+                                                <ImageView fx:id="musicImage02" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                                   <HBox.margin>
+                                                      <Insets right="20.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label fx:id="artistName02" prefHeight="21.0" prefWidth="212.0" text="Artist Name" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="songName02" maxWidth="800.0" minWidth="310.0" prefHeight="21.0" prefWidth="310.0" text="Song Name" textFill="#fff59b" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="songDuration02" maxWidth="200.0" minWidth="129.0" prefHeight="19.0" prefWidth="129.0" text="00:00" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="trendingButton2" mnemonicParsing="false" onAction="#playTrending" prefHeight="33.0" prefWidth="36.0" styleClass="trending-play-button" HBox.hgrow="ALWAYS">
+                                                   <graphic>
+                                                      <ImageView fx:id="trendingPlayImg2" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@play-64.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                             <padding>
+                                                <Insets left="15.0" right="15.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="59.0" minHeight="39.0" prefHeight="39.0" prefWidth="744.0" styleClass="trending-music-content">
+                                             <children>
+                                                <ImageView fx:id="musicImage03" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                                   <HBox.margin>
+                                                      <Insets right="20.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label fx:id="artistName03" prefHeight="21.0" prefWidth="212.0" text="Artist Name" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="songName03" maxWidth="800.0" minWidth="310.0" prefHeight="21.0" prefWidth="310.0" text="Song Name" textFill="#fff59b" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="songDuration03" maxWidth="200.0" minWidth="129.0" prefHeight="19.0" prefWidth="129.0" text="00:00" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="trendingButton3" mnemonicParsing="false" onAction="#playTrending" prefHeight="33.0" prefWidth="36.0" styleClass="trending-play-button" HBox.hgrow="ALWAYS">
+                                                   <graphic>
+                                                      <ImageView fx:id="trendingPlayImg3" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@play-64.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                             <padding>
+                                                <Insets left="15.0" right="15.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="103.0" minHeight="39.0" prefHeight="39.0" prefWidth="744.0" styleClass="trending-music-content">
+                                             <children>
+                                                <ImageView fx:id="musicImage04" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                                   <HBox.margin>
+                                                      <Insets right="20.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label fx:id="artistName04" prefHeight="21.0" prefWidth="212.0" text="Artist Name" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="songName04" maxWidth="800.0" minWidth="310.0" prefHeight="21.0" prefWidth="310.0" text="Song Name" textFill="#fff59b" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="songDuration04" maxWidth="200.0" minWidth="129.0" prefHeight="19.0" prefWidth="129.0" text="00:00" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="trendingButton4" mnemonicParsing="false" onAction="#playTrending" prefHeight="20.0" prefWidth="20.0" styleClass="trending-play-button" HBox.hgrow="ALWAYS">
+                                                   <graphic>
+                                                      <ImageView fx:id="trendingPlayImg4" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@play-64.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                             <padding>
+                                                <Insets left="15.0" right="15.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="147.0" minHeight="39.0" prefHeight="39.0" prefWidth="744.0" styleClass="trending-music-content">
+                                             <children>
+                                                <ImageView fx:id="musicImage0" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                                   <HBox.margin>
+                                                      <Insets right="20.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label fx:id="artistName0311" prefHeight="21.0" prefWidth="212.0" text="Artist Name" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="songName0311" maxWidth="800.0" minWidth="310.0" prefHeight="21.0" prefWidth="310.0" text="Song Name" textFill="#fff59b" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="songDuration0311" maxWidth="200.0" minWidth="129.0" prefHeight="19.0" prefWidth="129.0" text="00:00" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="trendingButton5" mnemonicParsing="false" onAction="#playTrending" prefHeight="20.0" prefWidth="20.0" styleClass="trending-play-button" HBox.hgrow="ALWAYS">
+                                                   <graphic>
+                                                      <ImageView fx:id="trendingPlayImg5" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@play-64.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                             <padding>
+                                                <Insets left="15.0" right="15.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="45.0" layoutY="191.0" minHeight="39.0" prefHeight="39.0" prefWidth="744.0" styleClass="trending-music-content">
+                                             <children>
+                                                <ImageView fx:id="musicImage06" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                                   <HBox.margin>
+                                                      <Insets right="20.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label fx:id="artistName06" prefHeight="21.0" prefWidth="212.0" text="Artist Name" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="songName06" maxWidth="800.0" minWidth="310.0" prefHeight="21.0" prefWidth="310.0" text="Song Name" textFill="#fff59b" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="songDuration06" maxWidth="200.0" minWidth="129.0" prefHeight="19.0" prefWidth="129.0" text="00:00" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="trendingButton6" mnemonicParsing="false" onAction="#playTrending" prefHeight="20.0" prefWidth="20.0" styleClass="trending-play-button" HBox.hgrow="ALWAYS">
+                                                   <graphic>
+                                                      <ImageView fx:id="trendingPlayImg6" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@play-64.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                             <padding>
+                                                <Insets left="15.0" right="15.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="35.0" right="20.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="30.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="82.0" prefWidth="1000.0" styleClass="player" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0">
+         <children>
+            <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <center>
+                  <HBox prefHeight="97.0" prefWidth="604.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="81.0" prefWidth="102.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Button fx:id="previousSong" layoutX="233.0" layoutY="19.0" mnemonicParsing="false" onAction="#previous" style="-fx-background-radius: 100%; -fx-background-color: none; -fx-border-width: 2px; -fx-border-radius: 100%;">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@previous-colored.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="playPauseButton" alignment="BASELINE_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#togglePlayPause" prefHeight="39.0" prefWidth="56.0" style="-fx-background-color: #001a33; -fx-background-radius: 100%; -fx-border-color: #001a33; -fx-border-radius: 100%; -fx-border-width: 3px;">
+                                 <graphic>
+                                    <ImageView fx:id="playImage" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@play-64.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </Button>
+                              <Button fx:id="nextSong" layoutX="517.0" layoutY="19.0" mnemonicParsing="false" onAction="#next" style="-fx-background-radius: 100%; -fx-background-color: none; -fx-border-width: 2px; -fx-border-radius: 100%;">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@next-colored.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="438.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="currentTimeLabel" text="00:00">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                              <JFXSlider fx:id="musicSlider" maxWidth="450.0" minWidth="394.0" onDragDetected="#MusticTime" prefHeight="0.0" prefWidth="394.0" styleClass="music-slider" />
+                              <Label fx:id="totalTimeLabel" layoutX="150.0" layoutY="10.0" text="00:00">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </center>
+               <left>
+                  <HBox alignment="CENTER_LEFT" prefHeight="81.0" prefWidth="216.0" spacing="5.0" styleClass="song-details" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button mnemonicParsing="false" style="-fx-background-color: none;">
+                           <graphic>
+                              <ImageView fitHeight="53.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@musical-note.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <VBox alignment="CENTER_LEFT" prefHeight="91.0" prefWidth="64.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="songLabel" alignment="BASELINE_LEFT" prefHeight="21.0" prefWidth="168.0" text="Song" textFill="WHITE" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="BASELINE_LEFT" prefHeight="17.0" prefWidth="149.0" text="Artist Name" textFill="WHITE" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Corbel" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </left>
+               <right>
+                  <HBox alignment="CENTER" prefHeight="81.0" prefWidth="164.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button mnemonicParsing="false" style="-fx-background-color: none;">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@mute-colored.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <JFXSlider fx:id="volumeSlider" onDragDetected="#volume" prefHeight="14.0" prefWidth="90.0" />
+                        <Button mnemonicParsing="false" style="-fx-background-radius: 100%; -fx-background-color: none; -fx-border-width: 2px; -fx-border-radius: 100%;">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@repeat-colored.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" style="-fx-background-radius: 100%; -fx-background-color: none; -fx-border-width: 2px; -fx-border-radius: 100%;" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+               </right>
+            </BorderPane>
+         </children>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </AnchorPane>
+   </children>
+</AnchorPane>
